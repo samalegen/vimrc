@@ -54,8 +54,6 @@ Plug 'groenewege/vim-less' " Vim syntax for LESS (dynamic CSS)
 " --- HTML ---
 Plug 'othree/html5.vim' " HTML5 omnicomplete and sytnax
 Plug 'idanarye/breeze.vim'  " Html navigation like vim-easymotion, tag matching, tag highlighting and DOM navigation
-Plug 'gregsexton/matchtag', { 'for': ['html', 'javascri
-    pt'] }
 
 
 call plug#end()
