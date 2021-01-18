@@ -1,10 +1,13 @@
 set t_Co=256
 syntax on
+
 colorscheme darkblue
+
 set nocompatible
 set nu
 set encoding=utf8
 set ffs=unix,dos,mac "стандарт использования символов переноса строки в файлах на первом месте находится вариант Unix, где для переноса строки используется только символ \n"
+filetype plugin indent on "Включает определение типа файла, загрузку...... соответствующих ему плагинов и файлов отступов
 
 
 "set cursorline "линия рабочей строки
@@ -39,13 +42,28 @@ set mouse=a "поддержка мыши: n - обычный режим;"
 "a - все перечисленные ранее режимы;"
 "r - для режима 'Нажмите Enter' или запроса ввода информации"
 
+
+"Скрипт автоматической установки Vim-Plug
+if empty(glob('~/.vim/autoload/plug.vim')) "Если vim-plug не стоит
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs "Создать директорию
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
+  "И скачать его оттуда
+  "А после прогнать команду PlugInstall
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+
+
+
+
 call plug#begin('~/.vim/plugged')
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'puddl3glum/freepascal-vim'
 Plug 'jiangmiao/auto-pairs'
-"Plug 'vim-airline/vim-airline'"
+Plug 'vim-airline/vim-airline'
 Plug 'alvan/vim-closetag'
+
 
 " --- CSS ---
 Plug 'JulesWang/css.vim' " CSS syntax file
@@ -55,8 +73,22 @@ Plug 'groenewege/vim-less' " Vim syntax for LESS (dynamic CSS)
 Plug 'othree/html5.vim' " HTML5 omnicomplete and sytnax
 Plug 'idanarye/breeze.vim'  " Html navigation like vim-easymotion, tag matching, tag highlighting and DOM navigation
 
+Plug 'Yggdroot/indentLine' "отступы
+let g:indentLine_char = '¦'
+
+"Plug 'ryanoasis/vim-devicons' " добавляет в Airline и Nerdtree (файловый проводник) удобные иконочки.
+
 
 call plug#end()
+
+
+
+
+"let g:airline_powerline_fonts = 1 "Включить поддержку Powerline шрифтов
+"let g:airline#extensions#keymap#enabled = 0 "Не показывать текущий маппинг
+"let g:airline_section_z = "\ue0a1:%l/%L Col:%c" "Кастомная графа положения курсора
+"let g:Powerline_symbols='unicode' "Поддержка unicode
+"let g:airline#extensions#xkblayout#enabled = 0 "Про 
 
 
 
