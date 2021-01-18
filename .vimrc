@@ -43,5 +43,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'puddl3glum/freepascal-vim'
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
