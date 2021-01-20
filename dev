@@ -1,0 +1,11 @@
+tmux has-session -t dev
+if [ $? !=0 ]
+then
+    tmux new -s dev -n editor -d
+    tmux send-keys -t dev 'cd ~/coding/pascal' C-m
+    tmux send-keys -t dev 'vim' C-m
+    tmux new-window -n console -t dev
+    tmux send-keys -t dev:2 'cd ~/coding/pascal' C-m
+    tmux select-window -t dev:1
+fi
+    tmux attach -t dev
