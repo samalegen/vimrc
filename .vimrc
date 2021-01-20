@@ -1,8 +1,16 @@
 set t_Co=256
 syntax on
 
-colorscheme darkblue
-
+"colorscheme darkblue
+colorscheme darkburn
+"colorscheme monokai-chris
+"
+"
+"
+"
+"
+"
+"
 set nocompatible
 set nu
 set encoding=utf8
@@ -54,6 +62,7 @@ endif
 
 
 
+"  https://github.com/junegunn/vim-plug
 
 
 call plug#begin('~/.vim/plugged')
@@ -64,8 +73,12 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'alvan/vim-closetag'
 
+Plug 'flazz/vim-colorschemes' "Множество цветовых схем
+" После установки создать ссылку ln -s ~/.vim/plugged/vim-colorschemes/colors ~/.vim/colors
+Plug 'xolox/vim-misc' "Нужен для работы xolox/vim-colorscheme-switcher"
+Plug 'xolox/vim-colorscheme-switcher' "Переключение цветовых схем 
 
-" --- CSS ---
+"--- CSS ---
 Plug 'JulesWang/css.vim' " CSS syntax file
 Plug 'groenewege/vim-less' " Vim syntax for LESS (dynamic CSS)
 
@@ -95,6 +108,11 @@ call plug#end()
 
 "mapping"
 map <C-n> :NERDTreeToggle<CR>
+
+"map vim-colorschemes 
+map <C-j> :NextColorScheme<CR>
+map <C-k> :PrevColorScheme<CR>
+map <C-l> :RandomColorScheme<CR>
 
 " Languages support
 "=====================================================
