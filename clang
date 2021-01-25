@@ -1,0 +1,16 @@
+tmux has-session -t clang
+if [ $? != 0 ]
+    then
+    tmux new -s clang -n editor -d
+    tmux send-keys -t clang 'cd ~/ubuntu-in-termux' C-m
+    tmux send-keys -t clang './startubuntu.sh' C-m
+    tmux send-keys -t clang 'cd ~/coding/clang' C-m
+    tmux send-keys -t clang 'vim' C-m
+    tmux new-window -n console -t clang
+    tmux send-keys -t clang:2 'cd ~/ubuntu-in-termux' C-m
+    tmux send-keys -t clang './startubuntu.sh' C-m
+    tmux send-keys -t clang 'cd ~/coding/clang' C-m
+    tmux new-window -n termux -t clang
+    tmux select-window -t clang:1
+    fi
+    tmux attach -t clang
