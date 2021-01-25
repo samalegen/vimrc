@@ -2,8 +2,11 @@ set t_Co=256
 syntax on
 
 "colorscheme darkblue
-colorscheme darkburn
-"colorscheme monokai-chris
+"colorscheme darkburn
+colorscheme monokai
+"colorscheme molokai
+"colorscheme gruvbox
+"colorscheme onedark
 "
 "
 "
@@ -72,6 +75,7 @@ Plug 'puddl3glum/freepascal-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'alvan/vim-closetag'
+Plug 'joshdick/onedark.vim'
 
 Plug 'flazz/vim-colorschemes' "Множество цветовых схем
 " После установки создать ссылку ln -s ~/.vim/plugged/vim-colorschemes/colors ~/.vim/colors
